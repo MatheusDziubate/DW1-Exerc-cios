@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #0f1117;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    padding: 2rem;
+}
+
+.container {
+    background: #1a1d27;
+    border: 1px solid #2a2d3e;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    padding: 28px 32px 24px;
+}
+
+.header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.3px;
+    margin: 0;
+}
+
+.header p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+}
+
+.form-body {
+    padding: 28px 32px 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #6366f1;
+    margin: 20px 0 12px;
+}
+
+.section-title:first-child {
+    margin-top: 0;
+}
+
+.field {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #8b8fa8;
+    margin-bottom: 5px;
+    letter-spacing: 0.2px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 14px;
+    background: #0f1117;
+    border: 1px solid #2a2d3e;
+    border-radius: 10px;
+    color: #e2e4f0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder {
+    color: #3a3d52;
+}
+
+input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+.notas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    margin-top: 24px;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+button:hover { opacity: 0.88; }
+button:active { transform: scale(0.98); }
+
+#saida {
+    margin: 16px 32px 28px;
+    display: none;
+    background: #0f1117;
+    border: 1px solid #2a2d3e;
+    border-radius: 14px;
+    padding: 18px 20px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #c4c7dc;
+    text-align: left;
+}
+
+#saida.aprovado {
+    border-color: rgba(34,197,94,0.4);
+    background: rgba(34,197,94,0.04);
+}
+
+#saida.reprovado {
+    border-color: rgba(239,68,68,0.4);
+    background: rgba(239,68,68,0.04);
+}
+
+.resultado-media {
+    font-family: 'DM Mono', monospace;
+    font-size: 36px;
+    font-weight: 500;
+    color: #e2e4f0;
+    display: block;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.resultado-tags {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.resultado-conceito {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(99,102,241,0.2);
+    color: #a5b4fc;
+    letter-spacing: 1px;
+}
+
+.resultado-situacao {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.resultado-situacao.aprovado {
+    background: rgba(34,197,94,0.15);
+    color: #4ade80;
+}
+
+.resultado-situacao.reprovado {
+    background: rgba(239,68,68,0.15);
+    color: #f87171;
+}
+
+.resultado-notas {
+    font-size: 12px;
+    color: #6b7091;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    border-top: 1px solid #2a2d3e;
+}
+
+.resultado-aluno {
+    font-size: 12px;
+    color: #6b7091;
+    margin-top: 8px;
+}

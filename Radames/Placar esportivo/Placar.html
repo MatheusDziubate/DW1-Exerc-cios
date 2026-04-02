@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Placar Esportivo</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+.container {
+    background: #111827;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    text-align: center;
+    width: 350px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.times {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.time {
+    width: 45%;
+}
+
+.nome {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.pontos {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.add {
+    background: #22c55e;
+    color: white;
+}
+
+.sub {
+    background: #ef4444;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.reset {
+    margin-top: 15px;
+    background: #3b82f6;
+    color: white;
+    width: 100%;
+    padding: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Placar</h1>
+
+    <div class="times">
+        <div class="time">
+            <div class="nome">Time A</div>
+            <div class="pontos" id="pontosA">0</div>
+            <button class="add" onclick="add('A')">+1</button>
+            <button class="sub" onclick="sub('A')">-1</button>
+        </div>
+
+        <div class="time">
+            <div class="nome">Time B</div>
+            <div class="pontos" id="pontosB">0</div>
+            <button class="add" onclick="add('B')">+1</button>
+            <button class="sub" onclick="sub('B')">-1</button>
+        </div>
+    </div>
+
+    <button class="reset" onclick="resetar()">Resetar</button>
+</div>
+
+<script>
+let pontosA = 0;
+let pontosB = 0;
+
+function atualizar() {
+    document.getElementById("pontosA").innerText = pontosA;
+    document.getElementById("pontosB").innerText = pontosB;
+}
+
+function add(time) {
+    if (time === 'A') pontosA++;
+    else pontosB++;
+    atualizar();
+}
+
+function sub(time) {
+    if (time === 'A' && pontosA > 0) pontosA--;
+    if (time === 'B' && pontosB > 0) pontosB--;
+    atualizar();
+}
+
+function resetar() {
+    pontosA = 0;
+    pontosB = 0;
+    atualizar();
+}
+</script>
+
+</body>
+</html>
