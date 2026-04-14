@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estacionamento</title>
+  <link rel="stylesheet" href="estacionamento.css">
+</head>
+<body>
+
+  <header>
+    <span class="logo">🅿 Estacionamento</span>
+    <span class="badge">Sistema de Tarifas</span>
+  </header>
+
+  <main>
+    <div class="card">
+
+      <h1>Calculadora de Tarifas</h1>
+
+      <label>Data e Hora de Entrada:</label>
+      <input type="datetime-local" id="entrada">
+
+      <label>Data e Hora de Saída:</label>
+      <input type="datetime-local" id="saida">
+
+      <label>
+        <input type="checkbox" id="grande"> Veículo de grande porte (+25%)
+      </label>
+
+      <label>
+        <input type="checkbox" id="fidelidade"> Cliente frequente (-5%)
+      </label>
+
+      <button type="button" onclick="calcularTarifa()">Calcular Tarifa</button>
+
+      <p id="resultado"></p>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Estacionamento — Todos os direitos reservados
+  </footer>
+
+  <script src="estacionamento.js"></script>
+</body>
+</html>
